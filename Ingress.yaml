@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"networking.k8s.io/v1beta1","kind":"Ingress","metadata":{"annotations":{"kubernetes.io/ingress.class":"nginx"},"name":"ingress-resource","namespace":"default"},"spec":{"rules":[{"http":{"paths":[{"backend":{"serviceName":"hello-app","servicePort":8080},"path":"/helloworld"}]}}]}}
+    kubernetes.io/ingress.class: nginx
+  creationTimestamp: "2021-01-12T03:25:21Z"
+  generation: 1
+  name: ingress-resource
+  namespace: default
+  resourceVersion: "4503"
+  selfLink: /apis/extensions/v1beta1/namespaces/default/ingresses/ingress-resource
+  uid: acb37d9b-6f1a-42d2-8464-70121c8ea228
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          serviceName: hello-app
+          servicePort: 8080
+        path: /helloworld
+status:
+  loadBalancer:
+    ingress:
+    - ip: 35.239.89.194

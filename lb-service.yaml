@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2021-01-12T03:16:43Z"
+  finalizers:
+  - service.kubernetes.io/load-balancer-cleanup
+  labels:
+    app: nginx-ingress
+    chart: nginx-ingress-1.41.3
+    component: controller
+    heritage: Helm
+    release: nginx
+  name: nginx-nginx-ingress-controller
+  namespace: nginx
+  resourceVersion: "1798"
+  selfLink: /api/v1/namespaces/nginx/services/nginx-nginx-ingress-controller
+  uid: 88dd456f-d91e-478a-8986-2c7063e7c7b5
+spec:
+  clusterIP: 10.55.242.208
+  externalTrafficPolicy: Cluster
+  ports:
+  - name: http
+    nodePort: 31885
+    port: 80
+    protocol: TCP
+    targetPort: http
+  - name: https
+    nodePort: 32210
+    port: 443
+    protocol: TCP
+    targetPort: https
+  selector:
+    app: nginx-ingress
+    app.kubernetes.io/component: controller
+    release: nginx
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+    - ip: 35.239.89.194
