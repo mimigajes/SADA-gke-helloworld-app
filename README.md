@@ -47,3 +47,12 @@ The webpage can be displayed over the internet: there is an endpoint I can see t
 1. Ensure certificate validity for the endpoint
 1. Define all infrastructure using IaC - [Infrastructure as Code](iac.md), such as Terraform or Deployment Manager
 1. Define all Kubernetes objects using a templating engine of choice (e.g., Helm or Kustomize)
+
+## Results
+
+1. Downloaded Helm
+1. Used gcloud command to create cluster
+1. Used kubectl to create nginx namespace and then execute the Nginx’s chart
+1. Deploy "hello world" app and expose service
+1. Deploy the ingress controller
+1. End point = http://35.239.89.194/helloworld
