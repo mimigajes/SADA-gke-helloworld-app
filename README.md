@@ -55,3 +55,4 @@ The webpage can be displayed over the internet: there is an endpoint I can see t
 1. Used kubectl to create nginx namespace and then execute the Nginx’s chart
 1. Deploy "hello world" app and expose service
 1. Deploy the ingress controller
+1. End point = http://35.239.89.194/helloworld
